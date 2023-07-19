@@ -35,7 +35,7 @@ resource "alicloud_cs_managed_kubernetes" "k8s" {
   password              = var.password
   service_cidr          = var.service_cidr
   # version can not be defined in variables.tf. Options: 1.16.6-aliyun.1|1.14.8-aliyun.1
-  version = "1.16.6-aliyun.1"
+  version = var.k8s_version
   dynamic "addons" {
     for_each = var.cluster_addons
     content {
